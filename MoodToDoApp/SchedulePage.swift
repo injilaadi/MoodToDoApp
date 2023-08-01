@@ -9,7 +9,41 @@ import SwiftUI
 
 struct SchedulePage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
+        NavigationStack{
+            blueColor
+                .ignoresSafeArea()
+            VStack{
+                
+            }
+                .toolbar{
+                    ToolbarItemGroup(placement: .status){
+                        NavigationLink(destination: ContentView()) {
+                            Image("HomeIcon")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50.0)
+                               
+                        }
+                        NavigationLink(destination: SchedulePage()) {
+                                Image("CalendarIcon")
+                                    .resizable(resizingMode: .stretch)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50.0)
+                                    
+                        }
+                        NavigationLink(destination: MoodPage()) {
+                                Image("SmileIcon")
+                                    .resizable(resizingMode: .stretch)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50.0)
+                                    
+                        }
+                    }
+                    
+                }
+            
+        }
     }
 }
 

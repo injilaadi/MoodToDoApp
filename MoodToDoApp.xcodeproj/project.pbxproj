@@ -12,6 +12,7 @@
 		4881D01A2A785E3000C29E90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4881D0192A785E3000C29E90 /* Assets.xcassets */; };
 		4881D01E2A785E3000C29E90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4881D01D2A785E3000C29E90 /* Preview Assets.xcassets */; };
 		48C0D98C2A79ADA5005B0F6C /* SchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0D98B2A79ADA5005B0F6C /* SchedulePage.swift */; };
+		48C0D98E2A79B529005B0F6C /* MoodPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0D98D2A79B529005B0F6C /* MoodPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4881D01B2A785E3000C29E90 /* MoodToDoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodToDoApp.entitlements; sourceTree = "<group>"; };
 		4881D01D2A785E3000C29E90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48C0D98B2A79ADA5005B0F6C /* SchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePage.swift; sourceTree = "<group>"; };
+		48C0D98D2A79B529005B0F6C /* MoodPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				4881D0152A785E2E00C29E90 /* MoodToDoAppApp.swift */,
 				4881D0172A785E2E00C29E90 /* ContentView.swift */,
+				48C0D98D2A79B529005B0F6C /* MoodPage.swift */,
 				48C0D98B2A79ADA5005B0F6C /* SchedulePage.swift */,
 				4881D0192A785E3000C29E90 /* Assets.xcassets */,
 				4881D01B2A785E3000C29E90 /* MoodToDoApp.entitlements */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4881D0182A785E2E00C29E90 /* ContentView.swift in Sources */,
+				48C0D98E2A79B529005B0F6C /* MoodPage.swift in Sources */,
 				4881D0162A785E2E00C29E90 /* MoodToDoAppApp.swift in Sources */,
 				48C0D98C2A79ADA5005B0F6C /* SchedulePage.swift in Sources */,
 			);

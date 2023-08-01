@@ -1,14 +1,13 @@
 //
-//  ContentView.swift
+//  MoodPage.swift
 //  MoodToDoApp
 //
-//  Created by Injila Adil on 7/31/23.
+//  Created by Injila Adil on 8/1/23.
 //
-//new app
+
 import SwiftUI
 
-struct ContentView: View {
-    
+struct MoodPage: View {
     var body: some View {
         let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
         NavigationStack{
@@ -48,8 +47,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MoodPage_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MoodPage()
     }
 }
