@@ -8,17 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
+        let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
         ZStack {
-            NavigationStack {
-                NavigationLink(destination: ContentView()) {
-                    Image("")
+            NavigationStack{
+                VStack{
+                    .toolbar{
+                        ToolbarItemGroup(placement: .status){
+                            NavigationLink(destination: SchedulePage()) {
+                                Image("HomeIcon")
+                                    .resizable(resizingMode: .stretch)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50.0)
+                            }
+                            NavigationLink(destination: SchedulePage()) {
+                                    Image("CalendarIcon")
+                                        .resizable(resizingMode: .stretch)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 50.0)
+                                    
+                            }
+                            NavigationLink(destination: SchedulePage()) {
+                                    Image("SmileIcon")
+                                        .resizable(resizingMode: .stretch)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 50.0)
+                                    
+                            }
+                        }
+                    }
                 }
-
             }
-
         }
-          
     }
 }
 

@@ -12,6 +12,7 @@ struct MoodToDoAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            SchedulePage()
         }
     }
 }
