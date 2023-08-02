@@ -26,6 +26,7 @@ struct ContentView: View {
                                 .frame(width: 50.0)
                                
                         }
+                        
                         NavigationLink(destination: SchedulePage()) {
                                 Image("CalendarIcon")
                                     .resizable(resizingMode: .stretch)
