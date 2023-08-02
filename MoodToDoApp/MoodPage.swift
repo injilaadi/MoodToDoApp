@@ -12,7 +12,7 @@ struct MoodPage: View {
         let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
         @State var button = " ⃝"
         NavigationStack{
-            
+            //add new tracker button
             ZStack{
                 blueColor
                     .ignoresSafeArea()
@@ -27,7 +27,7 @@ struct MoodPage: View {
                         }
                         
                         
-                       
+                       //changes
                        
                         
                     }
