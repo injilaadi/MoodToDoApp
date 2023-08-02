@@ -14,22 +14,29 @@ struct ScheduleView: View {
     @Binding var showNewTask: Bool
     
     var body: some View {
-        VStack {
-            Text("Task Title:")
-            TextField("Enter the task description...", text: $title)
-            
-            Toggle(isOn: $isImportant) {
-                Text("Is it important?")
+        ZStack{
+            let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
+            blueColor
+                .ignoresSafeArea()
+            VStack {
+                
+                Text("Task Title:")
+                TextField("Enter the task description...", text: $title)
+                
+                Toggle(isOn: $isImportant) {
+                    Text("Is it important?")
+                }
+                
+                Button(action: {
+                    self.addTask(title: self.title, isImportant: self.isImportant)
+                    self.showNewTask = false
+                }) {
+                    Text("Add")
+                }
             }
+            .padding()
             
-            Button(action: {
-                self.addTask(title: self.title, isImportant: self.isImportant)
-                self.showNewTask = false
-            }) {
-                Text("Add")
-            }
         }
-        .padding()
     }
     
     private func addTask(title: String, isImportant: Bool = false) {

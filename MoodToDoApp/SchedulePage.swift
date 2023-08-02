@@ -18,70 +18,77 @@ struct SchedulePage: View {
     var body: some View {
         let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
         NavigationStack{
-            blueColor
-                .ignoresSafeArea()
-            VStack{
-                
-            }
-                .toolbar{
-                    ToolbarItemGroup(placement: .status){
-                        NavigationLink(destination: ContentView()) {
-                            Image("HomeIcon")
-                                .resizable(resizingMode: .stretch)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50.0, height: 50.0)
-                               
-                        }
-                        NavigationLink(destination: SchedulePage()) {
-                                Image("CalendarIcon")
-                                    .resizable(resizingMode: .stretch)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50.0, height: 50.0)
-                                    
-                        }
-                        NavigationLink(destination: MoodPage()) {
-                                Image("SmileIcon")
-                                    .resizable(resizingMode: .stretch)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50.0, height: 50.0)
-                                    
+            
+            ZStack{
+                blueColor
+                    .ignoresSafeArea()
+                VStack {
+                    HStack {
+                        Text("To Do List")
+                            .font(.system(size: 40))
+                            .fontWeight(.black)
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showNewTask = true
+                        }) {
+                            Text ("+")
+                                .font(.system(size: 40))
                         }
                     }
+                    .padding()
                     
+                    Spacer()
                 }
-            
-        }
-            
-        VStack {
-            HStack {
-                Text("To Do List")
-                    .font(.system(size: 40))
-                    .fontWeight(.black)
-                Spacer()
                 
-                Button(action: {
-                    self.showNewTask = true
-                }) {
-                    Text ("+")
-                        .font(.system(size: 40))
+            }
+            .toolbar{
+                
+                ToolbarItemGroup(placement: .status){
+                    NavigationLink(destination: ContentView()) {
+                        Image("HomeIcon")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50.0, height: 50.0)
+                        
+                    }
+                    NavigationLink(destination: SchedulePage()) {
+                        Image("CalendarIcon")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50.0, height: 50.0)
+                        
+                    }
+                    NavigationLink(destination: MoodPage()) {
+                        Image("SmileIcon")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50.0, height: 50.0)
+                        
+                    }
                 }
             }
-            .padding()
-            
-            Spacer()
         }
-        
         List {
+            
             ForEach (toDoItems) { toDoItem in
                 if toDoItem.isImportant {
                     Text("‼️" + (toDoItem.title ?? "No title"))
+                        
                 } else {
                     Text(toDoItem.title ?? "No title")
+                        
                 }
             }
             .onDelete(perform: deleteTask)
+            
+           
         }
+       
         .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+       
+        
         
         if showNewTask {
             ScheduleView(title: "", isImportant: false, showNewTask: $showNewTask)
