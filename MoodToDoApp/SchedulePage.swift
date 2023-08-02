@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct SchedulePage: View {
+    @Environment(\.managedObjectContext) var context
+    @State private var showNewTask = false
+    @FetchRequest(
+            entity: ToDo.entity(), sortDescriptors: [ NSSortDescriptor(keyPath: \ToDo.id, ascending: false) ])
+        
+    var toDoItems: FetchedResults<ToDo>
+    
     var body: some View {
         let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
         NavigationStack{
@@ -44,7 +51,56 @@ struct SchedulePage: View {
                 }
             
         }
+            
+        VStack {
+            HStack {
+                Text("To Do List")
+                    .font(.system(size: 40))
+                    .fontWeight(.black)
+                Spacer()
+                
+                Button(action: {
+                    self.showNewTask = true
+                }) {
+                    Text ("+")
+                        .font(.system(size: 40))
+                }
+            }
+            .padding()
+            
+            Spacer()
+        }
+        
+        List {
+            ForEach (toDoItems) { toDoItem in
+                if toDoItem.isImportant {
+                    Text("‼️" + (toDoItem.title ?? "No title"))
+                } else {
+                    Text(toDoItem.title ?? "No title")
+                }
+            }
+            .onDelete(perform: deleteTask)
+        }
+        .listStyle(.plain)
+        
+        if showNewTask {
+            ScheduleView(title: "", isImportant: false, showNewTask: $showNewTask)
+        }
     }
+    
+    private func deleteTask(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { toDoItems [$0] }.forEach(context.delete)
+            
+            do {
+                try context.save()
+            } catch {
+                print (error)
+            }
+        }
+    }
+    
+    
 }
 
 struct SchedulePage_Previews: PreviewProvider {
