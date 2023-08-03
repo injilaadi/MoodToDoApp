@@ -51,27 +51,24 @@ struct ContentView: View {
                             Image("HomeIcon")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 50.0)
+                                .frame(width: 50.0, height: 50.0)
                                 .padding()
-
                         }
                         NavigationLink(destination: SchedulePage()) {
                             Image("CalendarIcon")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 50.0)
+                                .frame(width: 50.0, height: 50.0)
                                 .padding()
-
                         }
                         NavigationLink(destination: MoodPage()) {
                             Image("SmileIcon")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 50.0)
+                                .frame(width: 50.0, height: 50.0)
                                 .padding()
                         }
                     }
-                    
                 }
             }
         }

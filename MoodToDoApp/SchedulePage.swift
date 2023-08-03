@@ -74,24 +74,27 @@ struct SchedulePage: View {
             }
         }
         List {
-            
             ForEach (toDoItems) { toDoItem in
-                if toDoItem.isImportant {
-                    Text("‼️" + (toDoItem.title ?? "No title"))
-                        
+                if toDoItem.isImportant == true {
+                    Text("‼️" + (toDoItem.title ?? "No title")
+                    )
+                    .listRowBackground(blueColor)
+                    
+                    
                 } else {
                     Text(toDoItem.title ?? "No title")
-                        
+                        .listRowBackground(blueColor)
+                    
+                    
                 }
             }
             .onDelete(perform: deleteTask)
-            
-           
         }
-       
         .listStyle(.plain)
-        .scrollContentBackground(.hidden)
-       
+        .animation(.easeOut, value: showNewTask)
+        .background(blueColor)
+        .scrollContentBackground(.automatic)
+        
         
         
         if showNewTask {
