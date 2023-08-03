@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    var positiveMessages = [ "You are quite ravishing today!", "Drink water!", "You are amazing", "Wow"]
+    var positiveMessages = ["You are quite ravishing today!", "Drink water!", "You are amazing", "Wow"]
     
-    @State var displayedMessage = "Drink water!"
+    @State var displayedMessage = "Click here!"
     
     var body: some View {
         let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
@@ -21,14 +21,13 @@ struct ContentView: View {
                 blueColor
                     .ignoresSafeArea()
                 VStack (alignment:.center){
-                    Text("motodo")
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
+//                    Text("motodo")
+//                        .font(.largeTitle)
+//                        .fontWeight(.semibold)
                     
                     // positive message generator
                     
                     
-                   
                     Text(displayedMessage)
                     Button("") {
                         var intRandom = Int.random(in: 0..<positiveMessages.count)
