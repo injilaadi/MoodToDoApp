@@ -14,7 +14,8 @@ struct SplashScreen: View {
     
     var body: some View {
         if isActive{
-            ContentView()
+            let persistenceController = PersistenceController.shared
+            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         } else{
             VStack{
                 VStack{

@@ -11,6 +11,7 @@ import SwiftUI
 struct MoodToDoAppApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
+
         WindowGroup {
             SplashScreen()
             //ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
