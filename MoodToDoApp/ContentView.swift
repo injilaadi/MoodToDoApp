@@ -21,9 +21,9 @@ struct ContentView: View {
                 blueColor
                     .ignoresSafeArea()
                 VStack (alignment:.center){
-                    Text("Mood To Do")
+                    Text("motodo")
                         .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .fontWeight(.semibold)
                     
                     // positive message generator
                     

@@ -10,6 +10,8 @@ import SwiftUI
 struct MoodPage: View {
     let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
     private var buttonIcons = [" ⃝", "🙂", "😐", "☹️"]
+    private var imageIcons = ["moodBoard1", "moodBoard2", "moodBoard3", "moodBoard4", "moodBoard5", "moodBoard6"]
+    @State var boardIndex = 0
     @State var moodIndex = [ 0, 0, 0, 0, 0, 0, 0 ]
     
     var body: some View {
@@ -18,59 +20,81 @@ struct MoodPage: View {
             ZStack{
                 blueColor
                     .ignoresSafeArea()
-                VStack{
-                    //tracker
-                    //day, core data, state property color
-                    Text("Mood Tracker")
+                VStack {
+                    VStack{
+                        //tracker
+                        //day, core data, state property color
+                        Text("Mood Tracker")
+                            .font(.largeTitle)
+                        
+                        HStack{
+                            Text("Monday")
+                                .font(.system(.title, design: .rounded))
+                            Button(buttonIcons[moodIndex[0]]) {
+                                moodIndex[0] = (moodIndex[0] + 1)%4
+                            }
+                        }
+                        HStack{
+                            Text("Tuesday")
+                                .font(.title)
+                            Button(buttonIcons[moodIndex[1]]) {
+                                moodIndex[1] = (moodIndex[1] + 1)%4
+                            }
+                        }
+                        HStack{
+                            Text("Wednesday")
+                                .font(.title)
+                            Button(buttonIcons[moodIndex[2]]) {
+                                moodIndex[2] = (moodIndex[2] + 1)%4
+                            }
+                        }
+                        HStack{
+                            Text("Thursday")
+                                .font(.title)
+                            Button(buttonIcons[moodIndex[3]]) {
+                                moodIndex[3] = (moodIndex[3] + 1)%4
+                            }
+                        }
+                        HStack{
+                            Text("Friday")
+                                .font(.title)
+                            Button(buttonIcons[moodIndex[4]]) {
+                                moodIndex[4] = (moodIndex[4] + 1)%4
+                            }
+                        }
+                        HStack{
+                            Text("Saturday")
+                                .font(.title)
+                            Button(buttonIcons[moodIndex[5]]) {
+                                moodIndex[5] = (moodIndex[5] + 1)%4
+                            }
+                        }
+                        HStack{
+                            Text("Sunday")
+                                .font(.title)
+                            Button(buttonIcons[moodIndex[6]]) {
+                                moodIndex[6] = (moodIndex[6] + 1)%4
+                            }
+                        }
+                        
+                        
+                    }
+                    .frame(alignment:.top)
                     
-                    HStack{
-                        Text("Monday")
-                        Button(buttonIcons[moodIndex[0]]) {
-                            moodIndex[0] = (moodIndex[0] + 1)%4
+                    Spacer(minLength: 10.0)
+                    VStack{
+                        // Text("Mood Tracker")
+                        Button {
+                            boardIndex = (boardIndex+1)%6
+                        } label: {
+                            Image(imageIcons[boardIndex])
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 200, height: 200)
                         }
                     }
-                    HStack{
-                        Text("Tuesday")
-                        Button(buttonIcons[moodIndex[1]]) {
-                            moodIndex[1] = (moodIndex[1] + 1)%4
-                        }
-                    }
-                    HStack{
-                        Text("Wednesday")
-                        Button(buttonIcons[moodIndex[2]]) {
-                            moodIndex[2] = (moodIndex[2] + 1)%4
-                        }
-                    }
-                    HStack{
-                        Text("Thursday")
-                        Button(buttonIcons[moodIndex[3]]) {
-                            moodIndex[3] = (moodIndex[3] + 1)%4
-                        }
-                    }
-                    HStack{
-                        Text("Friday")
-                        Button(buttonIcons[moodIndex[4]]) {
-                            moodIndex[4] = (moodIndex[4] + 1)%4
-                        }
-                    }
-                    HStack{
-                        Text("Saturday")
-                        Button(buttonIcons[moodIndex[5]]) {
-                            moodIndex[5] = (moodIndex[5] + 1)%4
-                        }
-                    }
-                    HStack{
-                        Text("Sunday")
-                        Button(buttonIcons[moodIndex[6]]) {
-                            moodIndex[6] = (moodIndex[6] + 1)%4
-                        }
-                    }
+                    .padding(110)
                     
-                    
-                }
-                
-                VStack{
-                   // Text("Mood Tracker")
                 }
                 .toolbar{
                     ToolbarItemGroup(placement: .status){

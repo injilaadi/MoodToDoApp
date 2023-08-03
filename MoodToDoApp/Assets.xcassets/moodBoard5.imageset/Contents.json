@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "#vintage #moodboard #aesthetic #collage #myfirstshuffle #taylorswift #gilmoregirls #music.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
