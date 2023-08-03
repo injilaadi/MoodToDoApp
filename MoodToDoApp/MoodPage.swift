@@ -10,7 +10,7 @@ import SwiftUI
 struct MoodPage: View {
     let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
     private var buttonIcons = [" ⃝", "😝", "🙂", "😐", "😴", "☹️", "😭"]
-    private var imageIcons = ["totoro", "moodBoard1", "moodBoard2", "moodBoard3", "moodBoard4", "moodBoard5" ]
+    private var imageIcons = ["moodBoard1", "moodBoard2", "moodBoard3", "moodBoard4", "moodBoard5" ]
     @State var boardIndex = 0
     @State var moodIndex = [ 0, 0, 0, 0, 0, 0, 0 ]
     
@@ -21,8 +21,8 @@ struct MoodPage: View {
                 blueColor
                     .ignoresSafeArea()
                 VStack {
-                    Spacer()
-                        .padding()
+                    //Spacer()
+                        //.padding()
                     Text("Mood Tracker")
                         .font(.largeTitle)
                         .padding()
@@ -97,12 +97,15 @@ struct MoodPage: View {
                             Image(imageIcons[boardIndex])
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 300)
-                                .border(.black, width:4)
+                                .frame(width: 200, height: 300)
+                                //.border(.black, width:4)
+                                .padding()
+                                
                             
                         }
                     }
-                    .padding(20)
+                    .padding()
+                    Spacer()
                     
                 }
                 .toolbar{
@@ -131,6 +134,7 @@ struct MoodPage: View {
                     }
                 }
             }
+            .navigationBarHidden(true)
         }
     }
     

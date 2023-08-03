@@ -38,7 +38,37 @@ struct SchedulePage: View {
                         }
                     }
                     .padding()
+                    if toDoItems.count != 0 {
+                        List {
+                            ForEach (toDoItems) { toDoItem in
+                                if toDoItem.isImportant == true {
+                                    Text("‼️" + (toDoItem.title ?? "No title")
+                                    )
+                                    .listRowBackground(blueColor)
+                                    
+                                } else {
+                                    Text(toDoItem.title ?? "No title")
+                                        .listRowBackground(blueColor)
+                                    
+                                }
+                            }
+                            .onDelete(perform: deleteTask)
+                        }
+                        .listStyle(.plain)
+                        .animation(.easeOut, value: showNewTask)
+                        .background(blueColor)
+                        .scrollContentBackground(.hidden)
+                    }
+                    else {
+                        Color(.clear)
+                    }
                     
+                    
+                    
+                    if showNewTask {
+                        ScheduleView(title: "", isImportant: false, showNewTask: $showNewTask)
+                    }
+
                     Spacer()
                 }
                 
@@ -72,33 +102,7 @@ struct SchedulePage: View {
                     }
                 }
             }
-        }
-        List {
-            ForEach (toDoItems) { toDoItem in
-                if toDoItem.isImportant == true {
-                    Text("‼️" + (toDoItem.title ?? "No title")
-                    )
-                    .listRowBackground(blueColor)
-                    
-                    
-                } else {
-                    Text(toDoItem.title ?? "No title")
-                        .listRowBackground(blueColor)
-                    
-                    
-                }
-            }
-            .onDelete(perform: deleteTask)
-        }
-        .listStyle(.plain)
-        .animation(.easeOut, value: showNewTask)
-        .background(blueColor)
-        .scrollContentBackground(.automatic)
-        
-        
-        
-        if showNewTask {
-            ScheduleView(title: "", isImportant: false, showNewTask: $showNewTask)
+            .navigationBarHidden(true)
         }
     }
     
