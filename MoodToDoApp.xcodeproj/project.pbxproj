@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480A0CD12A7C230700624E2E /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A0CD02A7C230700624E2E /* SplashScreen.swift */; };
 		4881D0162A785E2E00C29E90 /* MoodToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881D0152A785E2E00C29E90 /* MoodToDoAppApp.swift */; };
 		4881D0182A785E2E00C29E90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881D0172A785E2E00C29E90 /* ContentView.swift */; };
 		4881D01A2A785E3000C29E90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4881D0192A785E3000C29E90 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480A0CD02A7C230700624E2E /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		4881D0122A785E2E00C29E90 /* MoodToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4881D0152A785E2E00C29E90 /* MoodToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodToDoAppApp.swift; sourceTree = "<group>"; };
 		4881D0172A785E2E00C29E90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				4881D0152A785E2E00C29E90 /* MoodToDoAppApp.swift */,
 				4881D0172A785E2E00C29E90 /* ContentView.swift */,
+				480A0CD02A7C230700624E2E /* SplashScreen.swift */,
 				48C0D98D2A79B529005B0F6C /* MoodPage.swift */,
 				48C0D98B2A79ADA5005B0F6C /* SchedulePage.swift */,
 				95D4150A2A7AF0A0001FBDA8 /* ToDoItem.swift */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480A0CD12A7C230700624E2E /* SplashScreen.swift in Sources */,
 				95D415092A7AEF4F001FBDA8 /* Persistance.swift in Sources */,
 				95D415072A7AEF27001FBDA8 /* MoodToDoApp.xcdatamodeld in Sources */,
 				95D415042A7AEEDB001FBDA8 /* ScheduleView.swift in Sources */,
