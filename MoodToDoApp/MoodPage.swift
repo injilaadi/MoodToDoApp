@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MoodPage: View {
+    let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
+    private var buttonIcons = [" ⃝", "🙂", "😐", "☹️"]
+    @State var moodIndex = [ 0, 0, 0, 0, 0, 0, 0 ]
+    
     var body: some View {
-        let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
-        @State var button = " ⃝"
         NavigationStack{
             //add new tracker button
             ZStack{
@@ -18,46 +20,55 @@ struct MoodPage: View {
                     .ignoresSafeArea()
                 VStack{
                     //tracker
-                    //day, core data, state property color,
+                    //day, core data, state property color
                     Text("Mood Tracker")
+                    
                     HStack{
                         Text("Monday")
-                        Button(button) {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        Button(buttonIcons[moodIndex[0]]) {
+                            moodIndex[0] = (moodIndex[0] + 1)%4
                         }
-                        
-                        
-                       //changes
-                       
-                        
                     }
                     HStack{
                         Text("Tuesday")
-                        
+                        Button(buttonIcons[moodIndex[1]]) {
+                            moodIndex[1] = (moodIndex[1] + 1)%4
+                        }
                     }
                     HStack{
                         Text("Wednesday")
-                        
+                        Button(buttonIcons[moodIndex[2]]) {
+                            moodIndex[2] = (moodIndex[2] + 1)%4
+                        }
                     }
                     HStack{
                         Text("Thursday")
-                        
+                        Button(buttonIcons[moodIndex[3]]) {
+                            moodIndex[3] = (moodIndex[3] + 1)%4
+                        }
                     }
                     HStack{
                         Text("Friday")
-                        
+                        Button(buttonIcons[moodIndex[4]]) {
+                            moodIndex[4] = (moodIndex[4] + 1)%4
+                        }
                     }
                     HStack{
                         Text("Saturday")
-                        
+                        Button(buttonIcons[moodIndex[5]]) {
+                            moodIndex[5] = (moodIndex[5] + 1)%4
+                        }
                     }
                     HStack{
                         Text("Sunday")
-                        
+                        Button(buttonIcons[moodIndex[6]]) {
+                            moodIndex[6] = (moodIndex[6] + 1)%4
+                        }
                     }
                     
                     
                 }
+                
                 VStack{
                    // Text("Mood Tracker")
                 }
@@ -90,6 +101,8 @@ struct MoodPage: View {
             }
         }
     }
+    
+    
 }
 
 struct MoodPage_Previews: PreviewProvider {

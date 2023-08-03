@@ -16,6 +16,7 @@ struct SchedulePage: View {
     var toDoItems: FetchedResults<ToDo>
     
     var body: some View {
+        
         let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
         NavigationStack{
             
