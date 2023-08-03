@@ -10,11 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     var positiveMessages = ["You are quite ravishing today!", "Drink water!", "You are amazing!", "Wow, you're brilliant!", "Take a break, you deserve it!", "All limitations are self-imposed.", "Every moment is a fresh beginning.", "All smiles here :)"]
-    
     @State var displayedMessage = "Click here!"
+    let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
     
     var body: some View {
-        let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
     
         NavigationStack{
             ZStack{
@@ -29,6 +28,7 @@ struct ContentView: View {
                     
                     
                     Text(displayedMessage)
+                        .foregroundColor(Color(red:24/255.0, green:24/255.0, blue:24/255.0))
                     Button("") {
                         var intRandom = Int.random(in: 0..<positiveMessages.count)
                         while positiveMessages [intRandom] == displayedMessage{
@@ -52,21 +52,23 @@ struct ContentView: View {
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50.0)
-                            
+                                .padding()
+
                         }
                         NavigationLink(destination: SchedulePage()) {
                             Image("CalendarIcon")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50.0)
-                            
+                                .padding()
+
                         }
                         NavigationLink(destination: MoodPage()) {
                             Image("SmileIcon")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50.0)
-                            
+                                .padding()
                         }
                     }
                     

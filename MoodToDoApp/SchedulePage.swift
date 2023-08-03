@@ -51,21 +51,24 @@ struct SchedulePage: View {
                             .resizable(resizingMode: .stretch)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50.0, height: 50.0)
-                        
+                            .padding()
+
                     }
                     NavigationLink(destination: SchedulePage()) {
                         Image("CalendarIcon")
                             .resizable(resizingMode: .stretch)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50.0, height: 50.0)
-                        
+                            .padding()
+
                     }
                     NavigationLink(destination: MoodPage()) {
                         Image("SmileIcon")
                             .resizable(resizingMode: .stretch)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50.0, height: 50.0)
-                        
+                            .padding()
+
                     }
                 }
             }

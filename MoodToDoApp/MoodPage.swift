@@ -10,7 +10,7 @@ import SwiftUI
 struct MoodPage: View {
     let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
     private var buttonIcons = [" ⃝", "😝", "🙂", "😐", "😴", "☹️", "😭"]
-    private var imageIcons = ["moodBoard1", "moodBoard2", "moodBoard3", "moodBoard4", "moodBoard5", "moodBoard6"]
+    private var imageIcons = ["totoro", "moodBoard1", "moodBoard2", "moodBoard3", "moodBoard4", "moodBoard5" ]
     @State var boardIndex = 0
     @State var moodIndex = [ 0, 0, 0, 0, 0, 0, 0 ]
     
@@ -21,19 +21,26 @@ struct MoodPage: View {
                 blueColor
                     .ignoresSafeArea()
                 VStack {
-                    VStack{
+                    Spacer()
+                        .padding()
+                    Text("Mood Tracker")
+                        .font(.largeTitle)
+                        .padding()
+                    VStack(alignment: .leading){
                         //tracker
                         //day, core data, state property color
-                        Text("Mood Tracker")
-                            .font(.largeTitle)
+                        
                         
                         HStack{
                             Text("Monday")
                                 .font(.system(.title, design: .rounded))
+                                .multilineTextAlignment(.leading)
                             Button(buttonIcons[moodIndex[0]]) {
                                 moodIndex[0] = (moodIndex[0] + 1)%7
                             }
+                            Spacer()
                         }
+                        .frame(alignment: .leading)
                         HStack{
                             Text("Tuesday")
                                 .font(.title)
@@ -79,9 +86,9 @@ struct MoodPage: View {
                         
                         
                     }
-                    .frame(alignment:.top)
+                    .padding(20)
                     
-                    Spacer(minLength: 10.0)
+                    Spacer(minLength: 5)
                     VStack{
                         // Text("Mood Tracker")
                         Button {
@@ -90,10 +97,12 @@ struct MoodPage: View {
                             Image(imageIcons[boardIndex])
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 200, height: 200)
+                                .frame(width: 300)
+                                .border(.black, width:4)
+                            
                         }
                     }
-                    .padding(110)
+                    .padding(20)
                     
                 }
                 .toolbar{
@@ -103,24 +112,23 @@ struct MoodPage: View {
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50.0, height: 50.0)
-                            
+                                .padding()
                         }
                         NavigationLink(destination: SchedulePage()) {
                             Image("CalendarIcon")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50.0, height: 50.0)
-                            
+                                .padding()
                         }
                         NavigationLink(destination: MoodPage()) {
                             Image("SmileIcon")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50.0, height: 50.0)
-                            
+                                .padding()
                         }
                     }
-                    
                 }
             }
         }
