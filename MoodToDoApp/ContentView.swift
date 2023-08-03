@@ -4,12 +4,12 @@
 //
 //  Created by Injila Adil on 7/31/23.
 //
-// change file
+//
 
 import SwiftUI
 
 struct ContentView: View {
-    var positiveMessages = ["You are quite ravishing today!", "Drink water!", "You are amazing", "Wow"]
+    var positiveMessages = ["You are quite ravishing today!", "Drink water!", "You are amazing!", "Wow, you're brilliant!", "Take a break, you deserve it!", "All limitations are self-imposed.", "Every moment is a fresh beginning.", "All smiles here :)"]
     
     @State var displayedMessage = "Click here!"
     

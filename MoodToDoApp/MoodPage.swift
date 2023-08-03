@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MoodPage: View {
     let blueColor = Color(red: 191/255, green: 215/255, blue: 237/255)
-    private var buttonIcons = [" ⃝", "🙂", "😐", "☹️"]
+    private var buttonIcons = [" ⃝", "😝", "🙂", "😐", "😴", "☹️", "😭"]
     private var imageIcons = ["moodBoard1", "moodBoard2", "moodBoard3", "moodBoard4", "moodBoard5", "moodBoard6"]
     @State var boardIndex = 0
     @State var moodIndex = [ 0, 0, 0, 0, 0, 0, 0 ]
@@ -31,49 +31,49 @@ struct MoodPage: View {
                             Text("Monday")
                                 .font(.system(.title, design: .rounded))
                             Button(buttonIcons[moodIndex[0]]) {
-                                moodIndex[0] = (moodIndex[0] + 1)%4
+                                moodIndex[0] = (moodIndex[0] + 1)%7
                             }
                         }
                         HStack{
                             Text("Tuesday")
                                 .font(.title)
                             Button(buttonIcons[moodIndex[1]]) {
-                                moodIndex[1] = (moodIndex[1] + 1)%4
+                                moodIndex[1] = (moodIndex[1] + 1)%7
                             }
                         }
                         HStack{
                             Text("Wednesday")
                                 .font(.title)
                             Button(buttonIcons[moodIndex[2]]) {
-                                moodIndex[2] = (moodIndex[2] + 1)%4
+                                moodIndex[2] = (moodIndex[2] + 1)%7
                             }
                         }
                         HStack{
                             Text("Thursday")
                                 .font(.title)
                             Button(buttonIcons[moodIndex[3]]) {
-                                moodIndex[3] = (moodIndex[3] + 1)%4
+                                moodIndex[3] = (moodIndex[3] + 1)%7
                             }
                         }
                         HStack{
                             Text("Friday")
                                 .font(.title)
                             Button(buttonIcons[moodIndex[4]]) {
-                                moodIndex[4] = (moodIndex[4] + 1)%4
+                                moodIndex[4] = (moodIndex[4] + 1)%7
                             }
                         }
                         HStack{
                             Text("Saturday")
                                 .font(.title)
                             Button(buttonIcons[moodIndex[5]]) {
-                                moodIndex[5] = (moodIndex[5] + 1)%4
+                                moodIndex[5] = (moodIndex[5] + 1)%7
                             }
                         }
                         HStack{
                             Text("Sunday")
                                 .font(.title)
                             Button(buttonIcons[moodIndex[6]]) {
-                                moodIndex[6] = (moodIndex[6] + 1)%4
+                                moodIndex[6] = (moodIndex[6] + 1)%7
                             }
                         }
                         
