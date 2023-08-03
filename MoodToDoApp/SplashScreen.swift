@@ -13,15 +13,32 @@ struct SplashScreen: View {
     @State private var opacity = 0.5
     
     var body: some View {
-        VStack{
+        if isActive{
+            ContentView()
+        } else{
             VStack{
-                Text("MotoDO")
-                    .font(.system(size:80))
-                    .foregroundColor(.blue)
-                
+                VStack{
+                    Text("MotoDO")
+                        .font(.system(size:80))
+                        .foregroundColor(.blue)
+                    
+                }
+                .scaleEffect(size)
+                .opacity(opacity)
+                .onAppear{
+                    withAnimation(.easeIn(duration:1.2)){
+                        self.size = 0.9
+                        self.opacity = 1.0
+                    }
+                }
             }
-            
+            .onAppear{
+                DispatchQueue.main.asyncAfter(deadline: . now() + 2.0){
+                    self.isActive = true
+                }
+            }
         }
+        
     }
 }
 
