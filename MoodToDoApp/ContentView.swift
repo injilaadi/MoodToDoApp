@@ -19,7 +19,9 @@ struct ContentView: View {
             ZStack{
                 blueColor
                     .ignoresSafeArea()
+                
                 VStack (alignment:.center){
+                    
 //                    Text("motodo")
 //                        .font(.largeTitle)
 //                        .fontWeight(.semibold)
@@ -29,6 +31,7 @@ struct ContentView: View {
                     
                     Text(displayedMessage)
                         .foregroundColor(Color(red:24/255.0, green:24/255.0, blue:24/255.0))
+                        .font((.custom("CourierPrimer-BoldItalic", fixedSize: 20)))
                     Button("") {
                         var intRandom = Int.random(in: 0..<positiveMessages.count)
                         while positiveMessages [intRandom] == displayedMessage{
@@ -40,11 +43,16 @@ struct ContentView: View {
                     
                     .font(.title2)
                     .buttonStyle(.borderedProminent)
-                    .tint(Color (red: 50/255, green: 80/255, blue: 50/255))
+                    .tint(Color (red: 32/255, green: 114/255, blue: 175/255))
+                    .padding()
                     
                     
                     
                 }
+                .frame(width: 300, height: 200)
+                .background(.white)
+                .cornerRadius(25)
+                
                 .toolbar{
                     ToolbarItemGroup(placement: .status){
                         NavigationLink(destination: ContentView()) {

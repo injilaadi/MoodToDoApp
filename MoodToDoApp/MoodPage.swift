@@ -27,8 +27,6 @@ struct MoodPage: View {
                         .font(.largeTitle)
                         .padding()
                     VStack(alignment: .leading){
-                        //tracker
-                        //day, core data, state property color
                         
                         
                         HStack{
@@ -92,14 +90,15 @@ struct MoodPage: View {
                     VStack{
                         // Text("Mood Tracker")
                         Button {
-                            boardIndex = (boardIndex+1)%6
+                            boardIndex = (boardIndex+1)%5
                         } label: {
                             Image(imageIcons[boardIndex])
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 200, height: 300)
-                                //.border(.black, width:4)
-                                .padding()
+                                .border(.black, width:4)
+                                .frame( width: 100, height: 250)
+                                
+                               
                                 
                             
                         }

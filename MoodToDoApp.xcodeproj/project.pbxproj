@@ -22,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		480A0CD02A7C230700624E2E /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		4843651F2A7C52CE0063DCDF /* CourierPrime-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CourierPrime-BoldItalic.ttf"; path = "../../../Courier_Prime/CourierPrime-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4881D0122A785E2E00C29E90 /* MoodToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4881D0152A785E2E00C29E90 /* MoodToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodToDoAppApp.swift; sourceTree = "<group>"; };
 		4881D0172A785E2E00C29E90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 				95D4150A2A7AF0A0001FBDA8 /* ToDoItem.swift */,
 				95D415032A7AEEDB001FBDA8 /* ScheduleView.swift */,
 				95D415052A7AEF27001FBDA8 /* MoodToDoApp.xcdatamodeld */,
+				4843651F2A7C52CE0063DCDF /* CourierPrime-BoldItalic.ttf */,
 				95D415082A7AEF4F001FBDA8 /* Persistance.swift */,
 				4881D0192A785E3000C29E90 /* Assets.xcassets */,
 				4881D01B2A785E3000C29E90 /* MoodToDoApp.entitlements */,
